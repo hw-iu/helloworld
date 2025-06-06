@@ -22,6 +22,6 @@ jobs:
     - run: printenv | sort
     - run: echo "${{ env.cr_image }}"
     - run: docker build -t ${{ env.cr_image }}:${{ github.ref_name }} .
-    - run: docker tag ${{ env.cr_image }}:${{ github.ref_name }} ${{ github.repository }}:latest
+    - run: docker tag ${{ env.cr_image }}:${{ github.ref_name }} ${{ env.cr_image }}:latest
     - run: docker push ${{ env.cr_image }}:${{ github.ref_name }}
     - run: docker push ${{ env.cr_image }}:latest
