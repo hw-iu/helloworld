@@ -19,6 +19,6 @@ jobs:
     - run: printenv | sort
     - run: echo "${{ github.repository }}"
     - run: docker build -t ${{ github.repository }}/${{ github.ref_name }} .
-    - run: dockr tag ${{ github.repository }}/${{ github.ref_name }} ${{ github.repository }}:latest
+    - run: docker tag ${{ github.repository }}/${{ github.ref_name }} ${{ github.repository }}:latest
     - run: docker push ${{ github.repository }}/${{ github.ref_name }}
     - run: docker push ${{ github.repository }}:latest
